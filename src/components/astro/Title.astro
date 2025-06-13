@@ -1,0 +1,22 @@
+---
+interface props {
+  variant?: "white" | "gold";
+}
+
+const { variant = "gold" } = Astro.props as props;
+
+const variants = {
+  white: { h2: "text-white", div: "bg-white" },
+  gold: { h2: "text-[var(--gold-color)]", div: "bg-[var(--gold-color)]" },
+};
+
+const h2className = `font-bold text-[36px] leading-[1.45] ${variants[variant].h2}`;
+const divClassname = `h-[5px] w-25 rounded-[1px] ${variants[variant].div}`;
+---
+
+<div>
+  <h2 class={h2className}>
+    <slot />
+  </h2>
+  <div class={divClassname}></div>
+</div>

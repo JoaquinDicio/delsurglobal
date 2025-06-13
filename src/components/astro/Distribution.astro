@@ -1,0 +1,56 @@
+---
+import Title from "./Title.astro";
+import LinkButton from "./LinkButton.astro";
+---
+
+<section
+  id="distribution"
+  class="flex bg-[var(--gold-color)] xl:max-h-[700px] flex-col lg:flex-row overflow-hidden"
+>
+  <div class="flex-[50%]">
+    <div class="w-full px-8 lg:px-24 py-14 lg:py-26">
+      <Title variant="white"> Distribución confiable</Title>
+      <div
+        class="font-[500] flex flex-col gap-4 text-white mt-10 max-w-[580px]"
+      >
+        <p>
+          Contamos con una <strong
+            >red logística establecida en el estado de Texas, lo que nos permite
+            entregar nuestros productos de forma rápida, segura y continua</strong
+          > a distribuidores, supermercados y negocios gastronómicos.
+        </p>
+
+        <p>
+          Nuestro equipo se encarga de cada etapa del proceso, desde el ingreso
+          al país hasta la entrega final, garantizando la calidad y eficiencia
+          en cada envío.
+        </p>
+
+        <ul class="font-bold list-disc my-5 pl-4">
+          <li>Entregas puntuales y personalizadas en Texas y alrededores</li>
+          <li class="mt-5">
+            Almacenamiento y transporte bajo normas de seguridad alimentaria
+          </li>
+          <li class="mt-5">
+            Atención personalizada a distribuidores y mayoristas
+          </li>
+        </ul>
+
+        <LinkButton
+          className="font-regular"
+          href="#contact"
+          variant="solid_white"
+        >
+          Contactar
+        </LinkButton>
+      </div>
+    </div>
+  </div>
+  <div class="flex-[50%]">
+    <img
+      class="w-full object-cover h-full max-h-[600px] lg:max-h-none"
+      src="/logistics.png"
+      alt="camion y avion entregando paquetes"
+    />
+  </div>
+</section>

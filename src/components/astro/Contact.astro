@@ -1,0 +1,92 @@
+---
+import Title from "./Title.astro";
+---
+
+<section id="contact" class="bg-[url('/contact-background.png')] bg-cover">
+  <div
+    class="bg-[#272626]/60 w-full min-h-screen sm:min-h-fit px-8 py-14 lg:px-24 lg:py-28 flex justify-between"
+  >
+    <div>
+      <Title variant="white">Empecemos a trabajar juntos</Title>
+
+      <div class="text-white font-regular max-w-[665px] mt-8 md:mt-14">
+        <p>
+          En DelSurGlobal trabajamos con importadores, distribuidores y negocios
+          gastronómicos que buscan calidad, cumplimiento y una logística sin
+          complicaciones.
+        </p>
+        <p class="mt-5">
+          <strong
+            >Dejanos tus datos y descubrí cómo podemos ayudarte a llevar lo
+            mejor del mercado global directamente a tu negocio en EE.UU.</strong
+          >
+        </p>
+      </div>
+
+      <div class="flex items-start gap-2 md:hidden mt-6">
+        <a href="">
+          <img src="/linkedin.svg" class="w-[60px]" alt="logo de linkedin" />
+        </a>
+        <a href="">
+          <img src="/facebook.svg" class="w-[60px]" alt="logo de linkedin" />
+        </a>
+      </div>
+
+      <form action="/enviar" method="post" class="max-w-[620px] mt-10">
+        <fieldset class="flex flex-col gap-4">
+          <legend class="sr-only">Contacto</legend>
+
+          <div>
+            <label class="sr-only" for="nombre">Nombre:</label>
+            <input
+              class="bg-white rounded p-2 w-full"
+              placeholder="Nombre completo"
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="sr-only" for="email">Correo electrónico:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="bg-white rounded p-2 w-full"
+              placeholder="alguien@example.com"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="sr-only" for="mensaje">Mensaje:</label>
+            <textarea
+              id="mensaje"
+              class="bg-white rounded p-2 w-full"
+              placeholder="Tu mensaje"
+              name="mensaje"
+              rows="5"
+              required></textarea>
+          </div>
+
+          <div>
+            <button
+              class="border-[var(--gold-color)] text-white bg-[var(--gold-color)] px-4 py-2 font-[600] rounded-sm text-[1rem] border-[.15rem] text-center w-[180px] mt-2 cursor-pointer"
+              type="submit">Contactar</button
+            >
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="md:flex items-start gap-2 hidden">
+      <a href="">
+        <img src="/linkedin.svg" class="w-[70px]" alt="logo de linkedin" />
+      </a>
+      <a href="">
+        <img src="/facebook.svg" class="w-[70px]" alt="logo de linkedin" />
+      </a>
+    </div>
+  </div>
+</section>

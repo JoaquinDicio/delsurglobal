@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../assets/logo.png";
+import menuIcon from "../../assets/menu.svg";
+---
+
+<header
+  id="header"
+  class="flex flex-wrap justify-between items-center px-5 md:px-12 md:py-10 py-5 fixed w-full text-[#ffff] z-100"
+>
+  <div class="flex items-center gap-2">
+    <Image src={logo} alt={"Logo de DelSurGlobal"} />
+    <h1 class="md:font-[600] text-xl font-bold md:text-2xl uppercase">
+      Del Sur Global
+    </h1>
+  </div>
+
+  <button id="menuBtn" class="max-w-[40px] lg:hidden"
+    ><Image src={menuIcon} alt={"icono de menu"} /></button
+  >
+
+  <nav id="headerNav" class="w-full lg:w-fit hidden lg:block">
+    <ul class="flex gap-5 px-10 py-5 lg:py-0 lg:px-0 flex-col lg:flex-row">
+      <li><a href="#home">Inicio</a></li>
+      <li>
+        <a href="#services">Servicios</a>
+      </li>
+      <li>
+        <a href="#distribution">Distribución</a>
+      </li>
+      <li>
+        <a href="#products">Productos</a>
+      </li>
+      <li class="hidden lg:block">
+        <a
+          class="bg-[var(--gold-color)] rounded-sm text-white px-8 py-4 font-[600]"
+          href="#contact">Contactar</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+<style>
+  header {
+    transition: 0.75s;
+  }
+
+  .solid {
+    padding: 1rem;
+    background-color: var(--dark-color);
+    opacity: 98%;
+  }
+</style>
+<script>
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > 100) {
+      header?.classList.add("solid");
+    } else {
+      header?.classList.remove("solid");
+    }
+  });
+
+  const menuBtn = document.getElementById("menuBtn");
+
+  const nav = document.getElementById("headerNav");
+
+  menuBtn?.addEventListener("click", (e) => {
+    nav?.classList.toggle("hidden");
+  });
+</script>

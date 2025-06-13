@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Gothic A1";
+  src: url("../assets/fonts/GothicA1-Light.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gothic A1";
+  src: url("../assets/fonts/GothicA1-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gothic A1";
+  src: url("../assets/fonts/GothicA1-Medium.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gothic A1";
+  src: url("../assets/fonts/GothicA1-SemiBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gothic A1";
+  src: url("../assets/fonts/GothicA1-Bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gothic A1";
+  src: url("../assets/fonts/GothicA1-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+* {
+  font-family: "Gothic A1", sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --gold-color: #ad9574;
+  --dark-color: #272626;
+}

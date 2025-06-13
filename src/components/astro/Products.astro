@@ -1,0 +1,32 @@
+---
+import Title from "./Title.astro";
+import LinkButton from "./LinkButton.astro";
+import Slider from "../react/Slider";
+---
+
+<section
+  id="products"
+  class="min-h-screen px-8 py-14 lg:px-24 lg:py-26 flex flex-col"
+>
+  <Title>Productos destacados</Title>
+
+  <div class="mt-10 text-[#808080] max-w-[768px]">
+    <p class="font-regular">
+      En <strong>DelSurGlobal</strong> te ofrecemos una selección de <strong>
+        productos que reflejan lo mejor de la gastronomía global.</strong
+      >
+    </p>
+    <p class="font-regular mt-5">
+      <strong>Importamos y distribuimos productos de calidad premium,</strong> seleccionados
+      por su origen, sabor y autenticidad. <strong>
+        Garantizamos altos estándares de calidad y eficiencia en cada entrega.</strong
+      >
+    </p>
+  </div>
+
+  <LinkButton href="#" className="font-[600] mt-12"> Ver colección </LinkButton>
+
+  <div class="mt-14">
+    <Slider client:load />
+  </div>
+</section>
