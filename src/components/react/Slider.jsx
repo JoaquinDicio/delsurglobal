@@ -4,9 +4,11 @@ import SliderCard from "./SliderCard";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import useProducts from "./hooks/useProducts";
 
 export default function Slider() {
   const [count, setCount] = useState(0);
+  const { products, loading } = useProducts();
 
   return (
     <>
@@ -19,59 +21,31 @@ export default function Slider() {
         modules={[Pagination]}
         className="mySwiper"
         breakpoints={{
-          640: {
+          520: {
             slidesPerView: 2,
-            spaceBetween: 15,
+            spaceBetween: 25,
           },
           768: {
             slidesPerView: 3,
             spaceBetween: 20,
           },
-          1024: {
+          1200: {
             slidesPerView: 4,
             spaceBetween: 20,
           },
-          1280: {
+          1380: {
             slidesPerView: 5,
             spaceBetween: 20,
           },
         }}
       >
-        <SwiperSlide>
-          <div className="pb-12">
-            <SliderCard />
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="pb-12">
-            <SliderCard />
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="pb-12">
-            <SliderCard />
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="pb-12">
-            <SliderCard />
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="pb-12">
-            <SliderCard />
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="pb-12">
-            <SliderCard />
-          </div>
-        </SwiperSlide>
+        {products.map((aProduct) => (
+          <SwiperSlide>
+            <div className="pb-12">
+              <SliderCard key={aProduct.id} aProduct={aProduct.es} />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

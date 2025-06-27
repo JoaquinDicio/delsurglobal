@@ -4,68 +4,79 @@ import Title from "./Title.astro";
 
 <section
   id="services"
-  class="lg:min-h-screen flex flex-col px-8 lg:px-24 py-14 lg:py-26"
+  class="lg:min-h-screen flex flex-col px-8 lg:px-24 py-14 lg:py-26 md:bg-[url('/logo-bg.png')] bg-no-repeat bg-right bg-contain"
 >
-  <Title> Importación y exportación </Title>
-  <div
-    class="mt-10 flex flex-col gap-3 max-w-[730px] font-medium text-[#808080]"
-  >
-    <p>
-      <strong>
-        Llevamos al mercado estadounidense lo mejor de la gastronomía global,</strong
-      >
-      con especialización en la importación de alimentos premium bajo estrictos controles
-      de calidad y cumplimiento normativo.
-    </p>
+  <div data-aos="fade-in">
+    <Title> Importación y exportación </Title>
+    <div
+      class="mt-10 flex flex-col gap-3 max-w-[730px] font-medium text-[#808080]"
+    >
+      <p>
+        <strong>
+          Llevamos al mercado estadounidense lo mejor de la gastronomía global,</strong
+        >
+        con especialización en la importación de alimentos premium bajo estrictos
+        controles de calidad y cumplimiento normativo.
+      </p>
 
-    <p>
-      Fuimos <strong>
-        pioneros en introducir carne argentina en Estados Unidos, y hoy seguimos
-        ampliando nuestra red de proveedores confiables en todo el mundo.</strong
-      >
-    </p>
+      <p>
+        Fuimos <strong>
+          pioneros en introducir carne argentina en Estados Unidos, y hoy
+          seguimos ampliando nuestra red de proveedores confiables en todo el
+          mundo.</strong
+        >
+      </p>
 
-    <p>
-      Ya sea que necesites importar productos únicos o exportar alimentos
-      locales a nuevos mercados, <strong
-        >nuestro equipo se encarga de todo.</strong
-      >
-    </p>
-  </div>
-
-  <!-- CARDS -->
-
-  <div
-    class="bg-[var(--gold-color)] text-white font-medium rounded-sm p-4 flex items-center gap-5 max-w-[565px] mt-16 shadow"
-  >
-    <div class="min-h-[105px] min-w-[105px] flex items-center justify-center">
-      <img src="/medal.png" class="w-full h-full" alt="icono de medalla" />
-    </div>
-    <div>
-      <h3 class="font-bold mb-1">Especialistas en Importar Calidad</h3>
-      <p class="text-[14px]">
-        Traemos a Estados Unidos alimentos premium de origen garantizado,
-        cumpliendo con todas las normativas sanitarias y aduaneras.
+      <p>
+        Ya sea que necesites importar productos únicos o exportar alimentos
+        locales a nuevos mercados, <strong
+          >nuestro equipo se encarga de todo.</strong
+        >
       </p>
     </div>
-  </div>
 
-  <div
-    class="bg-[var(--gold-color)] text-white font-medium rounded-sm p-4 flex items-center gap-5 max-w-[565px] mt-5 shadow"
-  >
-    <div class="min-h-[105px] min-w-[105px] flex items-center justify-center">
-      <img
-        src="/earth.png"
-        class="min-w-[90px]"
-        alt="icono del planeta tierra"
-      />
+    <!-- CARDS -->
+
+    <div
+      class="card bg-[var(--gold-color)] text-white font-medium rounded-sm p-4 flex items-center gap-5 max-w-[565px] mt-16 shadow"
+    >
+      <div class="min-h-[105px] min-w-[105px] flex items-center justify-center">
+        <img src="/medal.png" class="w-full h-full" alt="icono de medalla" />
+      </div>
+      <div>
+        <h3 class="font-bold mb-1">Especialistas en Importar Calidad</h3>
+        <p class="text-[14px]">
+          Traemos a Estados Unidos alimentos premium de origen garantizado,
+          cumpliendo con todas las normativas sanitarias y aduaneras.
+        </p>
+      </div>
     </div>
-    <div>
-      <h3 class="font-bold mb-1">Especialistas en Importar Calidad</h3>
-      <p class="text-[14px]">
-        Ayudamos a productores y marcas locales a llevar sus productos al
-        mercado internacional, desde la planificación hasta la entrega final.
-      </p>
+
+    <div
+      class="card bg-[var(--gold-color)] text-white font-medium rounded-sm p-4 flex items-center gap-5 max-w-[565px] mt-5 shadow"
+    >
+      <div class="min-h-[105px] min-w-[105px] flex items-center justify-center">
+        <img
+          src="/earth.png"
+          class="min-w-[90px]"
+          alt="icono del planeta tierra"
+        />
+      </div>
+      <div>
+        <h3 class="font-bold mb-1">Especialistas en Importar Calidad</h3>
+        <p class="text-[14px]">
+          Ayudamos a productores y marcas locales a llevar sus productos al
+          mercado internacional, desde la planificación hasta la entrega final.
+        </p>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  @media (max-width: 370px) {
+    .card {
+      flex-direction: column;
+    }
+  }
+</style>

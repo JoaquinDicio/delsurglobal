@@ -2,8 +2,10 @@
 import LinkButton from "./LinkButton.astro";
 ---
 
-<section id="home" class="bg-[url('/home-background.png')] bg-cover">
-  <div class="bg-[#272626]/60 w-full h-screen flex items-center px-8 lg:px-24">
+<section id="home" class="bg-[url('/home-background.png')] bg-cover bg-right">
+  <div
+    class="bg-div bg-[#272626]/60 w-full h-screen flex items-center px-8 pt-5 lg:px-24"
+  >
     <div class="text-white w-full md:w-fit">
       <h2 class="text-6xl md:text-7xl font-bold uppercase">Del Sur Global</h2>
       <p class="text-md md:text-xl font-[600]">
@@ -16,9 +18,17 @@ import LinkButton from "./LinkButton.astro";
         <LinkButton
           className="w-full md:max-w-[200px]"
           variant="transparent"
-          href="#">Ver más</LinkButton
+          href="#services">Ver más</LinkButton
         >
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  @media (max-width: 350px) {
+    .bg-div {
+      padding-top: 60px;
+    }
+  }
+</style>

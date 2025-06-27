@@ -5,6 +5,7 @@ import Slider from "../react/Slider";
 ---
 
 <section
+  data-aos="fade-in"
   id="products"
   class="min-h-screen px-8 py-14 lg:px-24 lg:py-26 flex flex-col"
 >
@@ -24,7 +25,9 @@ import Slider from "../react/Slider";
     </p>
   </div>
 
-  <LinkButton href="#" className="font-[600] mt-12"> Ver colección </LinkButton>
+  <LinkButton href="/products" className="font-[600] mt-12">
+    Ver colección
+  </LinkButton>
 
   <div class="mt-14">
     <Slider client:load />

@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+import logo from "../assets/logo.png";
+import Footer from "../components/astro/Footer.astro";
+import { Image } from "astro:assets";
+import LoginForm from "../components/react/LoginForm";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <title>Astro</title>
+  </head>
+  <body>
+    <header class="fixed top-0 w-full p-20">
+      <nav>
+        <a href="/" class="text-white">Atrás</a>
+      </nav>
+    </header>
+    <section class="p-5 flex items-center h-screen bg-[var(--dark-color)]">
+      <div class="mx-auto w-full max-w-[500px]">
+        <div class="flex items-center mb-10 justify-center">
+          <Image class="object-contains" src={logo} alt={"Logo PodioTrading"} />
+          <p class="text-white text-2xl font-bold">DEL SUR GLOBAL</p>
+        </div>
+
+        <LoginForm client:visible />
+      </div>
+    </section>
+    <Footer />
+  </body>
+  <!-- AOS Script -->
+  <script src="../aos.config.js"></script>
+</html>

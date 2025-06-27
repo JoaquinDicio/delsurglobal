@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import logo from "../../assets/logo.png";
 import menuIcon from "../../assets/menu.svg";
+const { baseRoute = "" } = Astro.props;
 ---
 
 <header
@@ -19,22 +20,25 @@ import menuIcon from "../../assets/menu.svg";
     ><Image src={menuIcon} alt={"icono de menu"} /></button
   >
 
-  <nav id="headerNav" class="w-full lg:w-fit hidden lg:block">
+  <nav
+    id="headerNav"
+    class="w-full max-h-0 lg:max-h-none overflow-hidden transition-all duration-500 lg:overflow-visible lg:w-fit lg:block"
+  >
     <ul class="flex gap-5 px-10 py-5 lg:py-0 lg:px-0 flex-col lg:flex-row">
-      <li><a href="#home">Inicio</a></li>
+      <li><a href={`${baseRoute}/#home`}>Inicio</a></li>
       <li>
-        <a href="#services">Servicios</a>
+        <a href={`${baseRoute}/#services`}>Servicios</a>
       </li>
       <li>
-        <a href="#distribution">Distribución</a>
+        <a href={`${baseRoute}/#distribution`}>Distribución</a>
       </li>
       <li>
-        <a href="#products">Productos</a>
+        <a href={`${baseRoute}/#products`}>Productos</a>
       </li>
       <li class="hidden lg:block">
         <a
           class="bg-[var(--gold-color)] rounded-sm text-white px-8 py-4 font-[600]"
-          href="#contact">Contactar</a
+          href={`${baseRoute}/#contact`}>Contactar</a
         >
       </li>
     </ul>
@@ -52,8 +56,9 @@ import menuIcon from "../../assets/menu.svg";
   }
 </style>
 <script>
+  const header = document.querySelector("header");
+
   window.addEventListener("scroll", function () {
-    const header = document.querySelector("header");
     const scrollPosition = window.scrollY;
 
     if (scrollPosition > 100) {
@@ -68,6 +73,18 @@ import menuIcon from "../../assets/menu.svg";
   const nav = document.getElementById("headerNav");
 
   menuBtn?.addEventListener("click", (e) => {
-    nav?.classList.toggle("hidden");
+    nav?.classList.toggle("max-h-0");
+    nav?.classList.toggle("max-h-[500px]");
+    if (window.scrollY < 100) {
+      header?.classList.toggle("solid");
+    }
   });
 </script>
+
+<style>
+  @media (max-width: 350px) {
+    img {
+      width: 60px;
+    }
+  }
+</style>

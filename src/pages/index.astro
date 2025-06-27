@@ -15,6 +15,7 @@ import Footer from "../components/astro/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Astro</title>
   </head>
   <body>
@@ -26,4 +27,7 @@ import Footer from "../components/astro/Footer.astro";
     <Contact />
     <Footer />
   </body>
+
+  <!-- AOS Script -->
+  <script src="../aos.config.js"></script>
 </html>
