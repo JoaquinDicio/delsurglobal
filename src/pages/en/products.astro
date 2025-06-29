@@ -1,0 +1,70 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/astro/Header.astro";
+import Footer from "../../components/astro/Footer.astro";
+import LinkButton from "../../components/astro/LinkButton.astro";
+import ProductsGrid from "../../components/react/ProductsGrid";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+
+        <title>DelSurGlobal | Featured products</title>
+        <meta
+            name="description"
+            content="We import and distribute premium quality products selected for their origin, flavor and authenticity."
+        />
+
+        <!-- SEO multilingüe -->
+        <link rel="alternate" hreflang="es" href="https://tusitio.com/" />
+        <link rel="alternate" hreflang="en" href="https://tusitio.com/en/" />
+    </head>
+    <body>
+        <Header baseRoute="/en" lang="en" />
+        <section>
+            <div class="bg-[url('/home-background.png')] bg-cover bg-right">
+                <div
+                    class="bg-[#272626]/60 w-full text-white h-[50vh] min-h-[350px] flex flex-col justify-center px-8 pt-5 lg:px-24"
+                >
+                    <h2 class="text-4xl md:text-7xl font-bold">
+                        Featured Products
+                    </h2>
+                    <p class="text-md md:text-xl mt-5 font-[600]">
+                        We import and distribute premium quality products
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:min-h-screen px-8 lg:px-24 py-14 lg:py-26">
+                <ProductsGrid client:visible />
+            </div>
+
+            <div class="bg-[url('/contact-background.png')] bg-center bg-cover">
+                <div
+                    class="bg-[#272626]/60 px-8 lg:px-24 flex items-center justify-center py-14 lg:py-26 min-h-[50vh]"
+                >
+                    <div class="text-white flex flex-col">
+                        <p class="text-4xl font-bold text-center">
+                            Looking for more?
+                        </p>
+                        <LinkButton
+                            href="/en/#contact"
+                            className="w-full mt-8 text-sm"
+                            >Contact us</LinkButton
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+        <Footer />
+    </body>
+    <script src="../../aos.config.js"></script>
+</html>

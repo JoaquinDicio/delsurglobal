@@ -2,7 +2,31 @@
 import { Image } from "astro:assets";
 import logo from "../../assets/logo.png";
 import menuIcon from "../../assets/menu.svg";
-const { baseRoute = "" } = Astro.props;
+interface Props {
+  baseRoute?: string;
+  lang?: "es" | "en";
+}
+
+const { baseRoute = "", lang = "es" }: Props = Astro.props;
+
+const texts: Record<"es" | "en", Record<string, string>> = {
+  es: {
+    home: "Inicio",
+    services: "Servicios",
+    distribution: "Distribución",
+    products: "Productos",
+    contact: "Contactar",
+  },
+  en: {
+    home: "Home",
+    services: "Services",
+    distribution: "Distribution",
+    products: "Products",
+    contact: "Contact",
+  },
+};
+
+const base = lang === "en" ? "/en" : "";
 ---
 
 <header
@@ -25,25 +49,26 @@ const { baseRoute = "" } = Astro.props;
     class="w-full max-h-0 lg:max-h-none overflow-hidden transition-all duration-500 lg:overflow-visible lg:w-fit lg:block"
   >
     <ul class="flex gap-5 px-10 py-5 lg:py-0 lg:px-0 flex-col lg:flex-row">
-      <li><a href={`${baseRoute}/#home`}>Inicio</a></li>
+      <li><a href={`${base}/#home`}>{texts[lang].home}</a></li>
       <li>
-        <a href={`${baseRoute}/#services`}>Servicios</a>
+        <a href={`${base}/#services`}>{texts[lang].services}</a>
       </li>
       <li>
-        <a href={`${baseRoute}/#distribution`}>Distribución</a>
+        <a href={`${base}/#distribution`}>{texts[lang].distribution}</a>
       </li>
       <li>
-        <a href={`${baseRoute}/#products`}>Productos</a>
+        <a href={`${base}/#products`}>{texts[lang].products}</a>
       </li>
       <li class="hidden lg:block">
         <a
           class="bg-[var(--gold-color)] rounded-sm text-white px-8 py-4 font-[600]"
-          href={`${baseRoute}/#contact`}>Contactar</a
+          href={`${base}/#contact`}>{texts[lang].contact}</a
         >
       </li>
     </ul>
   </nav>
 </header>
+
 <style>
   header {
     transition: 0.75s;
@@ -55,6 +80,7 @@ const { baseRoute = "" } = Astro.props;
     opacity: 98%;
   }
 </style>
+
 <script>
   const header = document.querySelector("header");
 

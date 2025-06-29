@@ -1,5 +1,8 @@
 ---
 import Title from "./Title.astro";
+
+// Español por defecto
+const { lang = "es" } = Astro.props;
 ---
 
 <section
@@ -7,47 +10,88 @@ import Title from "./Title.astro";
   class="lg:min-h-screen flex flex-col px-8 lg:px-24 py-14 lg:py-26 md:bg-[url('/logo-bg.png')] bg-no-repeat bg-right bg-contain"
 >
   <div data-aos="fade-in">
-    <Title> Importación y exportación </Title>
+    <Title>
+      {lang === "en" ? "Import and Export" : "Importación y exportación"}
+    </Title>
+
     <div
       class="mt-10 flex flex-col gap-3 max-w-[730px] font-medium text-[#808080]"
     >
-      <p>
-        <strong>
-          Llevamos al mercado estadounidense lo mejor de la gastronomía global,</strong
-        >
-        con especialización en la importación de alimentos premium bajo estrictos
-        controles de calidad y cumplimiento normativo.
-      </p>
+      {
+        lang === "en" ? (
+          <>
+            <p>
+              <strong>
+                We bring the best of global gastronomy to the U.S. market,
+              </strong>{" "}
+              specializing in the import of premium foods under strict quality
+              and compliance standards.
+            </p>
 
-      <p>
-        Fuimos <strong>
-          pioneros en introducir carne argentina en Estados Unidos, y hoy
-          seguimos ampliando nuestra red de proveedores confiables en todo el
-          mundo.</strong
-        >
-      </p>
+            <p>
+              <strong>
+                We were pioneers in introducing Argentine beef to the United
+                States,
+              </strong>{" "}
+              and today we continue to expand our network of trusted suppliers
+              worldwide.
+            </p>
 
-      <p>
-        Ya sea que necesites importar productos únicos o exportar alimentos
-        locales a nuevos mercados, <strong
-          >nuestro equipo se encarga de todo.</strong
-        >
-      </p>
+            <p>
+              Whether you need to import unique products or export local food to
+              new markets, <strong>our team handles everything.</strong>
+            </p>
+          </>
+        ) : (
+          <>
+            <p>
+              <strong>
+                Llevamos al mercado estadounidense lo mejor de la gastronomía
+                global,
+              </strong>{" "}
+              con especialización en la importación de alimentos premium bajo
+              estrictos controles de calidad y cumplimiento normativo.
+            </p>
+
+            <p>
+              <strong>
+                Fuimos pioneros en introducir carne argentina en Estados Unidos,
+              </strong>{" "}
+              y hoy seguimos ampliando nuestra red de proveedores confiables en
+              todo el mundo.
+            </p>
+
+            <p>
+              Ya sea que necesites importar productos únicos o exportar
+              alimentos locales a nuevos mercados,{" "}
+              <strong>nuestro equipo se encarga de todo.</strong>
+            </p>
+          </>
+        )
+      }
     </div>
 
     <!-- CARDS -->
-
     <div
       class="card bg-[var(--gold-color)] text-white font-medium rounded-sm p-4 flex items-center gap-5 max-w-[565px] mt-16 shadow"
     >
       <div class="min-h-[105px] min-w-[105px] flex items-center justify-center">
-        <img src="/medal.png" class="w-full h-full" alt="icono de medalla" />
+        <img src="/medal.png" class="w-full h-full" alt="medal icon" />
       </div>
       <div>
-        <h3 class="font-bold mb-1">Especialistas en Importar Calidad</h3>
+        <h3 class="font-bold mb-1">
+          {
+            lang === "en"
+              ? "Experts in Importing Quality"
+              : "Especialistas en Importar Calidad"
+          }
+        </h3>
         <p class="text-[14px]">
-          Traemos a Estados Unidos alimentos premium de origen garantizado,
-          cumpliendo con todas las normativas sanitarias y aduaneras.
+          {
+            lang === "en"
+              ? "We bring premium foods with certified origin to the U.S., complying with all health and customs regulations."
+              : "Traemos a Estados Unidos alimentos premium de origen garantizado, cumpliendo con todas las normativas sanitarias y aduaneras."
+          }
         </p>
       </div>
     </div>
@@ -56,17 +100,22 @@ import Title from "./Title.astro";
       class="card bg-[var(--gold-color)] text-white font-medium rounded-sm p-4 flex items-center gap-5 max-w-[565px] mt-5 shadow"
     >
       <div class="min-h-[105px] min-w-[105px] flex items-center justify-center">
-        <img
-          src="/earth.png"
-          class="min-w-[90px]"
-          alt="icono del planeta tierra"
-        />
+        <img src="/earth.png" class="min-w-[90px]" alt="planet earth icon" />
       </div>
       <div>
-        <h3 class="font-bold mb-1">Especialistas en Importar Calidad</h3>
+        <h3 class="font-bold mb-1">
+          {
+            lang === "en"
+              ? "Experts in Exporting Food"
+              : "Especialistas en Exportar Alimentos"
+          }
+        </h3>
         <p class="text-[14px]">
-          Ayudamos a productores y marcas locales a llevar sus productos al
-          mercado internacional, desde la planificación hasta la entrega final.
+          {
+            lang === "en"
+              ? "We help local producers and brands take their products to international markets, from planning to final delivery."
+              : "Ayudamos a productores y marcas locales a llevar sus productos al mercado internacional, desde la planificación hasta la entrega final."
+          }
         </p>
       </div>
     </div>

@@ -2,6 +2,8 @@
 import Title from "./Title.astro";
 import LinkButton from "./LinkButton.astro";
 import Slider from "../react/Slider";
+
+const { lang = "es" } = Astro.props;
 ---
 
 <section
@@ -9,24 +11,57 @@ import Slider from "../react/Slider";
   id="products"
   class="min-h-screen px-8 py-14 lg:px-24 lg:py-26 flex flex-col"
 >
-  <Title>Productos destacados</Title>
+  <Title>
+    {lang === "en" ? "Featured Products" : "Productos destacados"}
+  </Title>
 
   <div class="mt-10 text-[#808080] max-w-[768px]">
-    <p class="font-regular">
-      En <strong>DelSurGlobal</strong> te ofrecemos una selección de <strong>
-        productos que reflejan lo mejor de la gastronomía global.</strong
-      >
-    </p>
-    <p class="font-regular mt-5">
-      <strong>Importamos y distribuimos productos de calidad premium,</strong> seleccionados
-      por su origen, sabor y autenticidad. <strong>
-        Garantizamos altos estándares de calidad y eficiencia en cada entrega.</strong
-      >
-    </p>
+    {
+      lang === "en" ? (
+        <>
+          <p class="font-regular">
+            At <strong>DelSurGlobal</strong>, we offer a curated selection of{" "}
+            <strong>
+              products that showcase the best of global gastronomy.
+            </strong>
+          </p>
+          <p class="font-regular mt-5">
+            <strong>We import and distribute premium quality products,</strong>{" "}
+            carefully selected for their origin, flavor, and authenticity.{" "}
+            <strong>
+              We guarantee high standards of quality and efficiency in every
+              delivery.
+            </strong>
+          </p>
+        </>
+      ) : (
+        <>
+          <p class="font-regular">
+            En <strong>DelSurGlobal</strong> te ofrecemos una selección de{" "}
+            <strong>
+              productos que reflejan lo mejor de la gastronomía global.
+            </strong>
+          </p>
+          <p class="font-regular mt-5">
+            <strong>
+              Importamos y distribuimos productos de calidad premium,
+            </strong>{" "}
+            seleccionados por su origen, sabor y autenticidad.{" "}
+            <strong>
+              Garantizamos altos estándares de calidad y eficiencia en cada
+              entrega.
+            </strong>
+          </p>
+        </>
+      )
+    }
   </div>
 
-  <LinkButton href="/products" className="font-[600] mt-12">
-    Ver colección
+  <LinkButton
+    href={lang === "en" ? "/en/products" : "/products"}
+    className="font-[600] mt-12"
+  >
+    {lang === "en" ? "View Collection" : "Ver colección"}
   </LinkButton>
 
   <div class="mt-14">

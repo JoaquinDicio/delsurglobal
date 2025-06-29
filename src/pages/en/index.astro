@@ -1,0 +1,74 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/astro/Header.astro";
+import Home from "../../components/astro/Home.astro";
+import ImportAndExport from "../../components/astro/ImportAndExport.astro";
+import Distribution from "../../components/astro/Distribution.astro";
+import Products from "../../components/astro/Products.astro";
+import Contact from "../../components/astro/Contact.astro";
+import Footer from "../../components/astro/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>Del Sur Global | Connecting Global Markets Effortlessly</title>
+    <meta
+      name="description"
+      content="Del Sur Global connects importers and distributors with premium international products. Efficient logistics and seamless service to your business in the U.S."
+    />
+    <meta
+      name="keywords"
+      content="import, distribution, international products, gourmet food, logistics, global market, Del Sur Global"
+    />
+    <meta name="language" content="English" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Del Sur Global" />
+
+    <meta
+      property="og:title"
+      content="Del Sur Global | Connecting Global Markets"
+    />
+    <meta
+      property="og:description"
+      content="We import and distribute carefully selected premium products for their quality and authenticity. Discover how we can help your business."
+    />
+    <meta property="og:image" content="/og-image-en.jpg" />
+    <meta property="og:url" content="https://delsurglobal.com/en/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Del Sur Global | Connecting Global Markets Effortlessly"
+    />
+    <meta
+      name="twitter:description"
+      content="We import and distribute premium quality products with logistics you can trust. Straight to your business in the U.S."
+    />
+    <meta name="twitter:image" content="/og-image-en.jpg" />
+
+    <link rel="canonical" href="https://delsurglobal.com/en/" />
+    <link rel="alternate" hreflang="es" href="https://delsurglobal.com/" />
+    <link rel="alternate" hreflang="en" href="https://delsurglobal.com/en/" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <Header baseRoute="/en" lang="en" />
+    <Home lang="en" />
+    <ImportAndExport lang="en" />
+    <Distribution lang="en" />
+    <Products lang="en" />
+    <Contact lang="en" />
+    <Footer lang="en" />
+
+    <script src="../../aos.config.js"></script>
+  </body>
+</html>

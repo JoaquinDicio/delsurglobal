@@ -4,6 +4,8 @@ import AddProductModal from "./AddProductModal";
 import productsService from "../../services/productsService";
 import Spinner from "./Spinner";
 import useProducts from "./hooks/useProducts";
+import usePaginatedProducts from "./hooks/usePaginatedProducts";
+import PaginationControls from "./PaginationControls";
 
 export default function ProductsManager() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -11,6 +13,8 @@ export default function ProductsManager() {
   const { products, setProducts, loading } = useProducts();
 
   const [selected, setSelected] = useState(null);
+
+  const { page, maxPage, prevPage, nextPage, displayProducts } = usePaginatedProducts({ products, itemsPerPage: 10 })
 
   const toggleModal = () => {
     setSelected(null);
@@ -89,9 +93,11 @@ export default function ProductsManager() {
         <Table
           handleEdit={onProductEdit}
           handleDelete={onProductDelete}
-          products={products}
+          products={displayProducts}
         />
       )}
+
+      <PaginationControls page={page} maxPage={maxPage} prevPage={prevPage} nextPage={nextPage} />
     </div>
   );
 }

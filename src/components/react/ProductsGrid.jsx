@@ -1,15 +1,14 @@
-import { useState } from "react";
 import useProducts from "./hooks/useProducts";
 import SliderCard from "./SliderCard";
 import Spinner from "./Spinner";
 import SearchBar from "./SearchBar";
-import GridControls from "./GridControls";
+import PaginationControls from "./PaginationControls";
 import usePaginatedProducts from "./hooks/usePaginatedProducts";
 
 export default function ProductsGrid() {
   const { products, loading } = useProducts();
 
-  const { onSearch, prevPage, nextPage, displayProducts } = usePaginatedProducts({ products })
+  const { page, maxPage, onSearch, prevPage, nextPage, displayProducts } = usePaginatedProducts({ products })
 
   return (
     <>
@@ -28,8 +27,8 @@ export default function ProductsGrid() {
           ))}
         </div>
 
-        <GridControls prevPage={prevPage} nextPage={nextPage} />
       </div>
+      <PaginationControls page={page} maxPage={maxPage} prevPage={prevPage} nextPage={nextPage} />
     </>
   );
 }

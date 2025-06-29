@@ -52,5 +52,5 @@ export default function usePaginatedProducts({ products, itemsPerPage = 8 }) {
         setSearchText(input)
     };
 
-    return { page, nextPage, prevPage, displayProducts, onSearch }
+    return { maxPage, page, nextPage, prevPage, displayProducts, onSearch }
 }

@@ -1,5 +1,8 @@
 ---
 import LinkButton from "./LinkButton.astro";
+
+// Por defecto español
+const { lang = "es" } = Astro.props;
 ---
 
 <section id="home" class="bg-[url('/home-background.png')] bg-cover bg-right">
@@ -9,17 +12,23 @@ import LinkButton from "./LinkButton.astro";
     <div class="text-white w-full md:w-fit">
       <h2 class="text-6xl md:text-7xl font-bold uppercase">Del Sur Global</h2>
       <p class="text-md md:text-xl font-[600]">
-        Conectando mercados globales sin complicaciones
+        {
+          lang === "en"
+            ? "Connecting global markets effortlessly"
+            : "Conectando mercados globales sin complicaciones"
+        }
       </p>
       <div class="flex flex-col sm:flex-row sm:gap-3 items-center mt-5">
         <LinkButton className="w-full md:max-w-[200px]" href="#contact">
-          Contactar</LinkButton
-        >
+          {lang === "en" ? "Contact us" : "Contactar"}
+        </LinkButton>
         <LinkButton
           className="w-full md:max-w-[200px]"
           variant="transparent"
-          href="#services">Ver más</LinkButton
+          href="#services"
         >
+          {lang === "en" ? "Learn more" : "Ver más"}
+        </LinkButton>
       </div>
     </div>
   </div>

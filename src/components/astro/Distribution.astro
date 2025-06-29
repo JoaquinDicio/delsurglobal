@@ -1,6 +1,9 @@
 ---
 import Title from "./Title.astro";
 import LinkButton from "./LinkButton.astro";
+
+// Español por defecto
+const { lang = "es" } = Astro.props;
 ---
 
 <section
@@ -9,48 +12,95 @@ import LinkButton from "./LinkButton.astro";
 >
   <div data-aos="fade-in" class="flex-[50%]">
     <div class="w-full px-8 lg:px-24 py-14 lg:py-26">
-      <Title variant="white"> Distribución confiable</Title>
+      <Title variant="white">
+        {lang === "en" ? "Reliable distribution" : "Distribución confiable"}
+      </Title>
+
       <div
         class="font-[500] flex flex-col gap-4 text-white mt-10 lg:max-w-[580px] max-w-none"
       >
-        <p>
-          Contamos con una <strong
-            >red logística establecida en el estado de Texas, lo que nos permite
-            entregar nuestros productos de forma rápida, segura y continua</strong
-          > a distribuidores, supermercados y negocios gastronómicos.
-        </p>
+        {
+          lang === "en" ? (
+            <>
+              <p>
+                We have a{" "}
+                <strong>
+                  logistics network established in Texas, allowing us to deliver
+                  our products quickly, safely, and consistently
+                </strong>{" "}
+                to distributors, supermarkets, and food businesses.
+              </p>
 
-        <p>
-          Nuestro equipo se encarga de cada etapa del proceso, desde el ingreso
-          al país hasta la entrega final, garantizando la calidad y eficiencia
-          en cada envío.
-        </p>
+              <p>
+                Our team manages every stage of the process, from entry into the
+                country to final delivery, ensuring quality and efficiency in
+                every shipment.
+              </p>
 
-        <ul class="font-bold list-disc my-5 pl-4">
-          <li>Entregas puntuales y personalizadas en Texas y alrededores</li>
-          <li class="mt-5">
-            Almacenamiento y transporte bajo normas de seguridad alimentaria
-          </li>
-          <li class="mt-5">
-            Atención personalizada a distribuidores y mayoristas
-          </li>
-        </ul>
+              <ul class="font-bold list-disc my-5 pl-4">
+                <li>
+                  On-time, customized deliveries in Texas and surrounding areas
+                </li>
+                <li class="mt-5">
+                  Storage and transport following food safety regulations
+                </li>
+                <li class="mt-5">
+                  Personalized support for distributors and wholesalers
+                </li>
+              </ul>
+            </>
+          ) : (
+            <>
+              <p>
+                Contamos con una{" "}
+                <strong>
+                  red logística establecida en el estado de Texas, lo que nos
+                  permite entregar nuestros productos de forma rápida, segura y
+                  continua
+                </strong>{" "}
+                a distribuidores, supermercados y negocios gastronómicos.
+              </p>
+
+              <p>
+                Nuestro equipo se encarga de cada etapa del proceso, desde el
+                ingreso al país hasta la entrega final, garantizando la calidad
+                y eficiencia en cada envío.
+              </p>
+
+              <ul class="font-bold list-disc my-5 pl-4">
+                <li>
+                  Entregas puntuales y personalizadas en Texas y alrededores
+                </li>
+                <li class="mt-5">
+                  Almacenamiento y transporte bajo normas de seguridad
+                  alimentaria
+                </li>
+                <li class="mt-5">
+                  Atención personalizada a distribuidores y mayoristas
+                </li>
+              </ul>
+            </>
+          )
+        }
 
         <LinkButton
           className="font-regular"
           href="#contact"
           variant="solid_white"
         >
-          Contactar
+          {lang === "en" ? "Contact us" : "Contactar"}
         </LinkButton>
       </div>
     </div>
   </div>
+
   <div class="flex-[50%]">
     <img
       class="w-full object-cover h-full max-h-[600px] lg:max-h-none"
       src="/logistics.png"
-      alt="camion y avion entregando paquetes"
+      alt={lang === "en"
+        ? "truck and airplane delivering packages"
+        : "camion y avion entregando paquetes"}
     />
   </div>
 </section>
