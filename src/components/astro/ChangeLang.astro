@@ -1,0 +1,25 @@
+---
+const { lang = "es" } = Astro.props;
+const isSpanish = lang === "es";
+const nextLangHref = isSpanish ? "/en/" : "/";
+const flagSrc = isSpanish
+    ? "https://flagcdn.com/us.svg"
+    : "https://flagcdn.com/es.svg";
+const altText = isSpanish ? "Switch to English" : "Cambiar a español";
+---
+
+<a
+    href={nextLangHref}
+    aria-label={altText}
+    class="fixed bottom-4 text-sm right-4 z-50 bg-white text-black border border-gray-300 shadow-md hover:shadow-lg hover:bg-gray-100 transition-all rounded-full p-2 flex items-center gap-2 px-2"
+>
+    {isSpanish ? "Switch to" : "Ver en"}
+    <img
+        src={flagSrc}
+        alt={altText}
+        class="w-6 h-6 object-contain"
+        width="20"
+        height="20"
+        loading="lazy"
+    />
+</a>

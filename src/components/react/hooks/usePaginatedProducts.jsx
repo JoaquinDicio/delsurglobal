@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-export default function usePaginatedProducts({ products, itemsPerPage = 8 }) {
+export default function usePaginatedProducts({ products, itemsPerPage = 8, lang = "es" }) {
     const [page, setPage] = useState(1)
 
     const [displayProducts, setDisplayProducts] = useState([])
@@ -23,7 +23,7 @@ export default function usePaginatedProducts({ products, itemsPerPage = 8 }) {
         if (searchText) {
 
             const results = products.filter((product) =>
-                product.es.name.toLowerCase().includes(searchText.toLowerCase()));
+                product[lang].name.toLowerCase().includes(searchText.toLowerCase()));
 
             setDisplayProducts(results.slice(min, max));
 

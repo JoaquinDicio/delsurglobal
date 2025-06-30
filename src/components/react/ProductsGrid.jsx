@@ -5,14 +5,14 @@ import SearchBar from "./SearchBar";
 import PaginationControls from "./PaginationControls";
 import usePaginatedProducts from "./hooks/usePaginatedProducts";
 
-export default function ProductsGrid() {
+export default function ProductsGrid({ lang = 'es' }) {
   const { products, loading } = useProducts();
 
-  const { page, maxPage, onSearch, prevPage, nextPage, displayProducts } = usePaginatedProducts({ products })
+  const { page, maxPage, onSearch, prevPage, nextPage, displayProducts } = usePaginatedProducts({ products, lang })
 
   return (
     <>
-      <SearchBar handleSubmit={onSearch} />
+      <SearchBar lang={lang} handleSubmit={onSearch} />
       <div className="mt-10">
         {loading && (
           <div className="flex items-center min-h-[200px] justify-center w-full gap-3">
@@ -23,7 +23,7 @@ export default function ProductsGrid() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {displayProducts?.map((aProduct) => (
-            <SliderCard aProduct={aProduct.es} key={aProduct.id} />
+            <SliderCard aProduct={aProduct[lang]} key={aProduct.id} />
           ))}
         </div>
 

@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import useProducts from "./hooks/useProducts";
 
-export default function Slider() {
+export default function Slider({ lang = 'es' }) {
   const [count, setCount] = useState(0);
   const { products, loading } = useProducts();
 
@@ -42,7 +42,7 @@ export default function Slider() {
         {products.map((aProduct) => (
           <SwiperSlide>
             <div className="pb-12">
-              <SliderCard key={aProduct.id} aProduct={aProduct.es} />
+              <SliderCard key={aProduct.id} aProduct={aProduct[lang]} />
             </div>
           </SwiperSlide>
         ))}
