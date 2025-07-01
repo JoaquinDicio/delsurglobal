@@ -10,7 +10,7 @@ import PaginationControls from "./PaginationControls";
 export default function ProductsManager() {
   const [modalVisible, setModalVisible] = useState(false);
 
-  const { products, setProducts, loading } = useProducts();
+  const { products, setProducts, loading } = useProducts(); // returns the original products
 
   const [selected, setSelected] = useState(null);
 
@@ -22,6 +22,8 @@ export default function ProductsManager() {
   };
 
   const onSubmit = async (aProduct, oldData) => {
+
+    //if there is old data that means we are editing
     if (oldData) {
       const response = await productsService.update(oldData.id, aProduct);
 

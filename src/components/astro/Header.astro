@@ -2,12 +2,13 @@
 import { Image } from "astro:assets";
 import logo from "../../assets/logo.png";
 import menuIcon from "../../assets/menu.svg";
+
 interface Props {
   baseRoute?: string;
   lang?: "es" | "en";
 }
 
-const { baseRoute = "", lang = "es" }: Props = Astro.props;
+const { lang = "es" }: Props = Astro.props;
 
 const texts: Record<"es" | "en", Record<string, string>> = {
   es: {

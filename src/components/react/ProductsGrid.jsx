@@ -16,7 +16,7 @@ export default function ProductsGrid({ lang = 'es' }) {
       <div className="mt-10">
         {loading && (
           <div className="flex items-center min-h-[200px] justify-center w-full gap-3">
-            <i>Cargando</i>
+            <i>{lang === "es" ? "Cargando" : "Loading"}</i>
             <Spinner className={"w-[40px]"} />
           </div>
         )}
