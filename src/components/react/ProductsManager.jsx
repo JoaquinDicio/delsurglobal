@@ -6,57 +6,20 @@ import Spinner from "./Spinner";
 import useProducts from "./hooks/useProducts";
 import usePaginatedProducts from "./hooks/usePaginatedProducts";
 import PaginationControls from "./PaginationControls";
-
+import useProductsActions from "./hooks/useProdutcsActions";
+// TODO-> MOVE SOME LOGIC TO A CUSTOM HOOK
 export default function ProductsManager() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const { products, setProducts, loading } = useProducts(); // returns the original products
 
-  const [selected, setSelected] = useState(null);
+  const { selected, setSelected, onProductDelete, onSubmit } = useProductsActions({ products, setProducts })
 
   const { page, maxPage, prevPage, nextPage, displayProducts } = usePaginatedProducts({ products, itemsPerPage: 10 })
 
   const toggleModal = () => {
     setSelected(null);
     setModalVisible(!modalVisible);
-  };
-
-  const onSubmit = async (aProduct, oldData) => {
-
-    //if there is old data that means we are editing
-    if (oldData) {
-      const response = await productsService.update(oldData.id, aProduct);
-
-      if (response.ok) {
-        const editedProduct = { id: oldData.id, ...aProduct };
-
-        const updatedArr = products.map((product) =>
-          product.id == oldData.id ? editedProduct : product
-        );
-
-        setProducts(updatedArr);
-      }
-
-      return response;
-    }
-
-    const response = await productsService.add(aProduct);
-
-    if (!response.ok) {
-      return { ok: false, error: "Algo salio mal agregando el producto" };
-    }
-
-    setProducts([...products, { id: response.doc.id, ...aProduct }]);
-
-    return response;
-  };
-
-  const onProductDelete = async (id) => {
-    const response = await productsService.delete(id);
-
-    if (!response.ok) return;
-
-    setProducts(products.filter((product) => product.id !== id));
   };
 
   const onProductEdit = (aProduct) => {
