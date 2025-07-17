@@ -20,18 +20,18 @@ const { lang = "es" } = Astro.props;
       lang === "en" ? (
         <>
           <p class="font-regular">
-            At <strong>DelSurGlobal</strong>, we offer a curated selection of{" "}
-            <strong>
-              products that showcase the best of global gastronomy.
-            </strong>
+            Our main scope at <strong>DelSurGlobal LLC</strong> is based in
+            providing a curated selection of products showcased in the finest
+            international gastronomy.
           </p>
           <p class="font-regular mt-5">
-            <strong>We import and distribute premium quality products,</strong>{" "}
-            carefully selected for their origin, flavor, and authenticity.{" "}
-            <strong>
-              We guarantee high standards of quality and efficiency in every
-              delivery.
-            </strong>
+            <strong>We import and distribute premium-quality goods,</strong>
+            carefully selected from their origin and with focus in authenticity
+            plus exceptional flavors.
+          </p>
+          <p class="font-regular mt-5 font-bold">
+            All of our customers rely on us by meeting the highest standards of
+            quality and efficiency.
           </p>
         </>
       ) : (
@@ -65,6 +65,6 @@ const { lang = "es" } = Astro.props;
   </LinkButton>
 
   <div class="mt-14">
-    <Slider lang="en" client:load />
+    <Slider lang={lang} client:load />
   </div>
 </section>

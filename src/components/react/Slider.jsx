@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import useProducts from "./hooks/useProducts";
 
-export default function Slider({ lang = 'es' }) {
+export default function Slider({ lang = "es" }) {
   const [count, setCount] = useState(0);
   const { products, loading } = useProducts();
 

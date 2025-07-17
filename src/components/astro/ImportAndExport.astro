@@ -11,7 +11,7 @@ const { lang = "es" } = Astro.props;
 >
   <div data-aos="fade-in">
     <Title>
-      {lang === "en" ? "Import and Export" : "Importación y exportación"}
+      {lang === "en" ? "Import & Export" : "Importación y exportación"}
     </Title>
 
     <div
@@ -22,24 +22,27 @@ const { lang = "es" } = Astro.props;
           <>
             <p>
               <strong>
-                We bring the best of global gastronomy to the U.S. market,
+                We provide the finest products in global cuisine the US market,
               </strong>{" "}
-              specializing in the import of premium foods under strict quality
-              and compliance standards.
+              focusing on premium food import under strict quality controls and
+              regulatory compliances.
             </p>
 
             <p>
               <strong>
-                We were pioneers in introducing Argentine beef to the United
-                States,
-              </strong>{" "}
-              and today we continue to expand our network of trusted suppliers
-              worldwide.
+                We proudly acknowledge ourselves as pioneers in introducing
+                Argentine beef
+              </strong>
+              to the United States and today we continue to expand our network
+              of trusted suppliers from around the world.
             </p>
 
             <p>
-              Whether you need to import unique products or export local food to
-              new markets, <strong>our team handles everything.</strong>
+              Whether you need to import premium and unique products or export
+              local foods to new international markets,{" "}
+              <strong>
+                our team will manage the entire process seamlessly.
+              </strong>
             </p>
           </>
         ) : (
@@ -82,14 +85,14 @@ const { lang = "es" } = Astro.props;
         <h3 class="font-bold mb-1">
           {
             lang === "en"
-              ? "Experts in Importing Quality"
+              ? "Our Focus: Quality"
               : "Especialistas en Importar Calidad"
           }
         </h3>
         <p class="text-[14px]">
           {
             lang === "en"
-              ? "We bring premium foods with certified origin to the U.S., complying with all health and customs regulations."
+              ? "With our experience in bringing premium products into the US market, we guarantee compliance in both sanitary and customs regulations."
               : "Traemos a Estados Unidos alimentos premium de origen garantizado, cumpliendo con todas las normativas sanitarias y aduaneras."
           }
         </p>
@@ -113,7 +116,7 @@ const { lang = "es" } = Astro.props;
         <p class="text-[14px]">
           {
             lang === "en"
-              ? "We help local producers and brands take their products to international markets, from planning to final delivery."
+              ? "Due to our undeniable expertise in quality focus, we help producers and  local brands to take their products to the international market, from the first stages of planning to final distribution deals."
               : "Ayudamos a productores y marcas locales a llevar sus productos al mercado internacional, desde la planificación hasta la entrega final."
           }
         </p>
