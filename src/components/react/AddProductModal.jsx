@@ -26,11 +26,18 @@ export default function AddProductModal({
   };
 
   const onInputChange = (e) => {
-    const field = e.target.name;
+    if (e.target.type == "file") {
+      // set the file prop if the input changed is the file one
+      setForm((prev) => ({ ...prev, file: e.target.files[0] }));
+    } else {
+      const field = e.target.name;
+      const value = e.target.value;
 
-    const value = e.target.value;
-
-    setForm((prev) => ({ ...prev, [lang]: { ...prev[lang], [field]: value } }));
+      setForm((prev) => ({
+        ...prev,
+        [lang]: { ...prev[lang], [field]: value },
+      }));
+    }
   };
 
   const onSubmit = async (e) => {
@@ -122,8 +129,9 @@ export default function AddProductModal({
             </label>
             <input
               type="file"
+              onChange={onInputChange}
               id="image"
-              name="image"
+              name="file"
               className="bg-gray-200 mt-1 rounded p-2 w-full"
               required
             />

@@ -15,16 +15,21 @@ const db = getFirestore(app);
 const productsService = {
   add: async (newProduct) => {
     try {
+      // TODO => esto despues tiene que ser la imagen URL
+      newProduct.file = "";
       const reference = await addDoc(collection(db, "products"), newProduct);
-
       return { ok: true, doc: reference };
     } catch (error) {
+      console.log(error);
       return { ok: false, msg: "Error al guardar el producto", error };
     }
   },
 
   update: async (id, editedProduct) => {
     try {
+      // TODO => esto despues tiene que ser la imagen URL
+      editedProduct.file = "";
+
       const productRef = doc(db, "products", id);
 
       await updateDoc(productRef, editedProduct);

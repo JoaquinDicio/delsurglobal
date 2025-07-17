@@ -1,0 +1,9 @@
+---
+import TestComponent from "../components/react/Test.jsx";
+const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_NAME;
+const CLOUD_PRESET = import.meta.env.VITE_CLOUDINARY_PRESET;
+---
+
+<html>
+  <TestComponent preset={CLOUD_PRESET} name={CLOUD_NAME} client:visible />
+</html>
