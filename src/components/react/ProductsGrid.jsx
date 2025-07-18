@@ -5,10 +5,11 @@ import SearchBar from "./SearchBar";
 import PaginationControls from "./PaginationControls";
 import usePaginatedProducts from "./hooks/usePaginatedProducts";
 
-export default function ProductsGrid({ lang = 'es' }) {
+export default function ProductsGrid({ lang = "es" }) {
   const { products, loading } = useProducts();
 
-  const { page, maxPage, onSearch, prevPage, nextPage, displayProducts } = usePaginatedProducts({ products, lang })
+  const { page, maxPage, onSearch, prevPage, nextPage, displayProducts } =
+    usePaginatedProducts({ products, lang });
 
   return (
     <>
@@ -21,14 +22,21 @@ export default function ProductsGrid({ lang = 'es' }) {
           </div>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-6">
           {displayProducts?.map((aProduct) => (
-            <SliderCard aProduct={aProduct[lang]} key={aProduct.id} />
+            <SliderCard
+              aProduct={{ ...aProduct[lang], imgUrl: aProduct.imgUrl }}
+              key={aProduct.id}
+            />
           ))}
         </div>
-
       </div>
-      <PaginationControls page={page} maxPage={maxPage} prevPage={prevPage} nextPage={nextPage} />
+      <PaginationControls
+        page={page}
+        maxPage={maxPage}
+        prevPage={prevPage}
+        nextPage={nextPage}
+      />
     </>
   );
 }

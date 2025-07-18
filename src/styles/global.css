@@ -47,6 +47,10 @@
   scroll-behavior: smooth;
 }
 
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --gold-color: #ad9574;
   --dark-color: #272626;

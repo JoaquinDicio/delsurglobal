@@ -18,25 +18,25 @@ const productsService = {
     try {
       newProduct.imgUrl = await uploadsService.uploadImage(newProduct.file); // uploads the file and save the image url
 
-      delete newProduct.file // delete the file from oject so firebase don't return error
+      delete newProduct.file; // delete the file from oject so firebase don't return error
 
       const reference = await addDoc(collection(db, "products"), newProduct);
 
       return { ok: true, doc: reference };
-
     } catch (error) {
-
       console.log(error);
 
       return { ok: false, msg: "Error al guardar el producto", error };
-
     }
   },
 
   update: async (id, editedProduct) => {
     try {
-      // TODO => esto despues tiene que ser la imagen URL
-      editedProduct.file = "";
+      editedProduct.imgUrl = await uploadsService.uploadImage(
+        editedProduct.file
+      ); // uploads the file and save the image url
+
+      delete editedProduct.file; // delete the file from oject so firebase don't return error
 
       const productRef = doc(db, "products", id);
 

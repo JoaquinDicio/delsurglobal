@@ -59,7 +59,7 @@ export default function AddProductModal({
       data-aos="fade-up"
       className="fixed top-0 left-0 w-full h-screen flex items-center z-105 justify-center bg-black/70"
     >
-      <div className="bg-white rounded max-w-[800px] w-full min-h-[700px] p-20">
+      <div className="bg-white rounded max-w-[800px] w-full min-h-[700px] p-20 max-h-screen overflow-y-scroll scrollbar-none">
         <p className="text-2xl font-medium text-[var(--dark-color)]">
           Información del producto
         </p>
@@ -127,6 +127,15 @@ export default function AddProductModal({
             <label htmlFor="name" className="text-sm">
               Portada
             </label>
+            {oldData && (
+              <div className="w-[100px] h-[100px] rounded mb-2 bg-gray-200">
+                <img
+                  className="h-full object-cover w-full"
+                  src={oldData?.imgUrl}
+                  alt="Portada del producto"
+                />
+              </div>
+            )}
             <input
               type="file"
               onChange={onInputChange}

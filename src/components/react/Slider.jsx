@@ -42,7 +42,10 @@ export default function Slider({ lang = "es" }) {
         {products.map((aProduct) => (
           <SwiperSlide>
             <div className="pb-12">
-              <SliderCard key={aProduct.id} aProduct={aProduct[lang]} />
+              <SliderCard
+                key={aProduct.id}
+                aProduct={{ ...aProduct[lang], imgUrl: aProduct.imgUrl }}
+              />
             </div>
           </SwiperSlide>
         ))}
