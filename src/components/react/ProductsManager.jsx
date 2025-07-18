@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Table from "./Table";
 import AddProductModal from "./AddProductModal";
-import productsService from "../../services/productsService";
 import Spinner from "./Spinner";
 import useProducts from "./hooks/useProducts";
 import usePaginatedProducts from "./hooks/usePaginatedProducts";
 import PaginationControls from "./PaginationControls";
 import useProductsActions from "./hooks/useProdutcsActions";
-// TODO-> MOVE SOME LOGIC TO A CUSTOM HOOK
+
+
 export default function ProductsManager() {
   const [modalVisible, setModalVisible] = useState(false);
 
