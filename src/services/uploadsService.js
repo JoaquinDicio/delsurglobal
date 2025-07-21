@@ -17,8 +17,6 @@ const uploadsService = {
 
             const data = await response.json()
 
-            console.log('Imagen subida:', data.url)
-
             return data.url
 
         } catch (error) {

@@ -16,7 +16,10 @@ const db = getFirestore(app);
 const productsService = {
   add: async (newProduct) => {
     try {
-      newProduct.imgUrl = await uploadsService.uploadImage(newProduct.file); // uploads the file and save the image url
+
+      if (newProduct.file) {
+        newProduct.imgUrl = await uploadsService.uploadImage(newProduct.file); // uploads the file and save the image url
+      }
 
       delete newProduct.file; // delete the file from oject so firebase don't return error
 
@@ -32,9 +35,11 @@ const productsService = {
 
   update: async (id, editedProduct) => {
     try {
-      editedProduct.imgUrl = await uploadsService.uploadImage(
-        editedProduct.file
-      ); // uploads the file and save the image url
+
+      if (editedProduct.file) { // if there is file we need to update image
+        const { file } = editedProduct;
+        editedProduct.imgUrl = await uploadsService.uploadImage(file); // uploads the file and save the image url
+      }
 
       delete editedProduct.file; // delete the file from oject so firebase don't return error
 

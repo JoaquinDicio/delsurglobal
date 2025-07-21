@@ -13,6 +13,7 @@ export default function AddProductModal({
 
   const [errors, setErrors] = useState(false);
 
+
   const [form, setForm] = useState(
     oldData || {
       en: { name: "", description: "" },
@@ -26,17 +27,23 @@ export default function AddProductModal({
   };
 
   const onInputChange = (e) => {
+
     if (e.target.type == "file") {
+
       // set the file prop if the input changed is the file one
       setForm((prev) => ({ ...prev, file: e.target.files[0] }));
+
     } else {
+
       const field = e.target.name;
+
       const value = e.target.value;
 
       setForm((prev) => ({
         ...prev,
         [lang]: { ...prev[lang], [field]: value },
       }));
+
     }
   };
 
@@ -127,7 +134,7 @@ export default function AddProductModal({
             <label htmlFor="name" className="text-sm">
               Portada
             </label>
-            {oldData && (
+            {oldData?.imgUrl && (
               <div className="w-[100px] h-[100px] rounded mb-2 bg-gray-200">
                 <img
                   className="h-full object-cover w-full"
@@ -142,7 +149,6 @@ export default function AddProductModal({
               id="image"
               name="file"
               className="bg-gray-200 mt-1 rounded p-2 w-full"
-              required
             />
           </div>
 

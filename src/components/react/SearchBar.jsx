@@ -12,7 +12,7 @@ export default function SearchBar({ handleSubmit, lang, cleanFilters }) {
     handleSubmit(searchText);
   };
 
-  const handleClean = () => {
+  const handleClean = (e) => {
     setSearchText("")
     cleanFilters();
   }
@@ -29,11 +29,11 @@ export default function SearchBar({ handleSubmit, lang, cleanFilters }) {
         />
         {
           searchText.length > 0 &&
-          <button onClick={handleClean} className="text-xs rounded-full text-[var(--gold-color)] bg-white mr-1.5 font-bold w-[20px] h-[18px] cursor-pointer">
+          <button type="button" onClick={handleClean} className="text-xs rounded-full text-[var(--gold-color)] bg-white mr-1.5 font-bold w-[20px] h-[18px] cursor-pointer">
             X
           </button>
         }
-        <button className="bg-[var(--gold-color)] px-4 py-3 rounded-r text-white">
+        <button type="submit" className="bg-[var(--gold-color)] px-4 py-3 rounded-r text-white">
           {lang === "es" ? "Buscar" : "Search"}
         </button>
       </form>
