@@ -8,12 +8,12 @@ import usePaginatedProducts from "./hooks/usePaginatedProducts";
 export default function ProductsGrid({ lang = "es" }) {
   const { products, loading } = useProducts();
 
-  const { page, maxPage, onSearch, prevPage, nextPage, displayProducts } =
+  const { page, maxPage, onSearch, prevPage, nextPage, displayProducts, cleanFilters } =
     usePaginatedProducts({ products, lang });
 
   return (
     <>
-      <SearchBar lang={lang} handleSubmit={onSearch} />
+      <SearchBar lang={lang} handleSubmit={onSearch} cleanFilters={cleanFilters} />
       <div className="mt-10">
         {loading && (
           <div className="flex items-center min-h-[200px] justify-center w-full gap-3">

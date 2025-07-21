@@ -52,5 +52,9 @@ export default function usePaginatedProducts({ products, itemsPerPage = 8, lang 
         setSearchText(input)
     };
 
-    return { maxPage, page, nextPage, prevPage, displayProducts, onSearch }
+    const cleanFilters = () => {
+        setDisplayProducts(products)
+    }
+
+    return { maxPage, page, nextPage, prevPage, displayProducts, onSearch, cleanFilters }
 }
