@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import Fuse from "fuse.js"
 
 export default function usePaginatedProducts({ products, itemsPerPage = 8, lang = "es" }) {
     const [page, setPage] = useState(1)
@@ -22,8 +23,13 @@ export default function usePaginatedProducts({ products, itemsPerPage = 8, lang 
         // if there is a search we paginate the search results
         if (searchText) {
 
-            const results = products.filter((product) =>
-                product[lang].name.toLowerCase().includes(searchText.toLowerCase()));
+            const fuse = new Fuse(products, {
+                keys: [`${lang}.name`], // setting the key based on language
+                threshold: 0.4,
+                ignoreLocation: true,
+            })
+
+            const results = fuse.search(searchText).map(r => r.item)
 
             setDisplayProducts(results.slice(min, max));
 

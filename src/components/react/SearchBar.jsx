@@ -12,7 +12,7 @@ export default function SearchBar({ handleSubmit, lang, cleanFilters }) {
     handleSubmit(searchText);
   };
 
-  const handleClean = (e) => {
+  const handleClean = () => {
     setSearchText("")
     cleanFilters();
   }
