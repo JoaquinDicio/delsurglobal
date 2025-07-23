@@ -25,7 +25,7 @@ export default function Table({ products, handleDelete, handleEdit }) {
                 <div className="flex gap-2 justify-end">
                   <button
                     onClick={() => handleEdit(aProduct)}
-                    className="bg-[var(--gold-color)] text-white px-3 py-1 rounded hover:opacity-90 text-sm"
+                    className="bg-[var(--gold-color)] cursor-pointer text-white px-3 py-1 rounded hover:opacity-90 text-sm"
                   >
                     Editar
                   </button>

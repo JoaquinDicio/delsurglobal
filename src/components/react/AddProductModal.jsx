@@ -13,7 +13,6 @@ export default function AddProductModal({
 
   const [errors, setErrors] = useState(false);
 
-
   const [form, setForm] = useState(
     oldData || {
       en: { name: "", description: "" },
@@ -27,14 +26,10 @@ export default function AddProductModal({
   };
 
   const onInputChange = (e) => {
-
     if (e.target.type == "file") {
-
       // set the file prop if the input changed is the file one
       setForm((prev) => ({ ...prev, file: e.target.files[0] }));
-
     } else {
-
       const field = e.target.name;
 
       const value = e.target.value;
@@ -43,7 +38,6 @@ export default function AddProductModal({
         ...prev,
         [lang]: { ...prev[lang], [field]: value },
       }));
-
     }
   };
 
@@ -115,10 +109,14 @@ export default function AddProductModal({
 
           <div className="mt-5">
             <label htmlFor="description" className="text-sm">
-              Descripción del producto
+              Descripción del producto -
             </label>
+            <span className="text-xs italic text-gray-500">
+              Max. 230 caracteres
+            </span>
             <textarea
               type="text"
+              maxLength={230}
               id="description"
               name="description"
               value={form[lang].description}
