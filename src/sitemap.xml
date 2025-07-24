@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <!-- Página principal -->
+  <url>
+    <loc>https://delsurglobal.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://delsurglobal.com/" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://delsurglobal.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delsurglobal.com/" />
+    <lastmod>2025-07-23</lastmod>
+  </url>
+
+  <!-- Página principal inglés -->
+  <url>
+    <loc>https://delsurglobal.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://delsurglobal.com/" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://delsurglobal.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delsurglobal.com/" />
+    <lastmod>2025-07-23</lastmod>
+  </url>
+
+  <!-- Página productos español -->
+  <url>
+    <loc>https://delsurglobal.com/products</loc>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://delsurglobal.com/products" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://delsurglobal.com/en/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delsurglobal.com/products" />
+    <lastmod>2025-07-23</lastmod>
+  </url>
+
+  <!-- Página productos inglés -->
+  <url>
+    <loc>https://delsurglobal.com/en/products</loc>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://delsurglobal.com/products" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://delsurglobal.com/en/products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://delsurglobal.com/products" />
+    <lastmod>2025-07-23</lastmod>
+  </url>
+
+  <!-- Agregá más URLs con sus versiones multilingües aquí -->
+</urlset>

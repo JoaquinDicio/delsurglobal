@@ -5,7 +5,11 @@ import LinkButton from "./LinkButton.astro";
 const { lang = "es" } = Astro.props;
 ---
 
-<section id="home" class="bg-[url('/home-background.png')] bg-cover bg-right">
+<section
+  id="home"
+  aria-label={lang === "en" ? "Home section" : "Pagina de inicio del sitio"}
+  class="bg-[url('/home-background.png')] bg-cover bg-right"
+>
   <div
     class="bg-div bg-[#272626]/60 w-full h-screen flex items-center px-8 pt-5 lg:px-24"
   >

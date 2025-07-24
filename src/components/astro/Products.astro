@@ -9,6 +9,9 @@ const { lang = "es" } = Astro.props;
 <section
   data-aos="fade-in"
   id="products"
+  aria-label={lang === "en"
+    ? "Featured products section"
+    : "Sección de productos destacados"}
   class="min-h-screen px-8 py-14 lg:px-24 lg:py-26 flex flex-col"
 >
   <Title>

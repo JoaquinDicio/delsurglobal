@@ -8,6 +8,9 @@ const { lang = "es" } = Astro.props;
 
 <section
   id="distribution"
+  aria-label={lang === "en"
+    ? "Reliable distribution services"
+    : "Servicios de distribución confiable"}
   class="flex bg-[var(--gold-color)] xl:max-h-[700px] flex-col lg:flex-row overflow-hidden"
 >
   <div data-aos="fade-in" class="flex-[50%]">

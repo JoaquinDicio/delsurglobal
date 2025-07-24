@@ -42,11 +42,12 @@ const base = lang === "en" ? "/en" : "";
   </div>
 
   <button id="menuBtn" class="max-w-[40px] lg:hidden"
-    ><Image src={menuIcon} alt={"icono de menu"} /></button
+    ><Image src={menuIcon} alt={"Menu de navegación"} /></button
   >
 
   <nav
     id="headerNav"
+    aria-label={lang === "en" ? "Main navigation" : "Navegación principal"}
     class="w-full max-h-0 lg:max-h-none overflow-hidden transition-all duration-500 lg:overflow-visible lg:w-fit lg:block"
   >
     <ul class="flex gap-5 px-10 py-5 lg:py-0 lg:px-0 flex-col lg:flex-row">
