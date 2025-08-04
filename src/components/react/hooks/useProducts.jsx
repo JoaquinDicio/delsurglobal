@@ -13,6 +13,7 @@ export default function useProducts() {
       const response = await productsService.getAll();
 
       setProducts(response);
+
       setLoading(false);
     };
 
