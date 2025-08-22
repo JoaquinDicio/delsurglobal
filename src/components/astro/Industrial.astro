@@ -1,0 +1,64 @@
+---
+import Title from "./Title.astro";
+import IndustrialCard from "./IndustrialCard.astro";
+const { lang = "es" } = Astro.props;
+interface Props {
+    lang?: "es" | "en";
+}
+const industrialProducts = [
+    {
+        name: "NanoCare",
+        img: "/nanocare.png",
+        en: "Nano Care consists of a range of products and innovative technologies that use nanotechnology to create a protective layering for various surfaces. This layering offers benefits such as permeation, stain resistance and great durability for materials.",
+        es: "Nano Care ofrece una gama de productos y tecnologías innovadoras que utilizan nanotecnología para crear una capa protectora en diversas superficies. Esta capa brinda beneficios como permeabilidad, resistencia a manchas y gran durabilidad para distintos materiales.",
+        website: "https://nano-care.com/",
+    },
+    {
+        name: "Xenox",
+        img: "/nanocare.png",
+        en: "Xenox develops advanced solutions using nanotechnology to protect electronic components, defense systems and other sensitive equipment. These treatments provide resistance to moisture, corrosion and environmental damage, ensuring long-term reliability.",
+        es: "Xenox desarrolla soluciones avanzadas utilizando nanotecnología para proteger componentes electrónicos, sistemas de defensa y otros equipos sensibles. Estos tratamientos ofrecen resistencia a la humedad, corrosión y daños ambientales, garantizando una alta fiabilidad a largo plazo.",
+        website: "https://nano-care.com/",
+    },
+    {
+        name: "GerNano",
+        img: "/nanocare.png",
+        en: "GerNano applies nanotechnology to the development of high-performance lubricants used in industrial and mechanical systems. These products reduce friction, enhance durability and improve efficiency in demanding operating conditions.",
+        es: "GerNano aplica nanotecnología al desarrollo de lubricantes de alto rendimiento utilizados en sistemas industriales y mecánicos. Estos productos reducen la fricción, mejoran la durabilidad y aumentan la eficiencia en condiciones de operación exigentes.",
+        website: "https://nano-care.com/",
+    },
+    {
+        name: "Krystaline",
+        img: "/krystaline.png",
+        en: "Krystaline offers crystallization-based additives designed for concrete and cement mixtures. Once applied, the additive penetrates the material, sealing pores and microcracks to improve waterproofing and extend structural durability.",
+        es: "Krystaline ofrece aditivos basados en tecnología de cristalización, diseñados para mezclas de hormigón y cemento. Una vez aplicados, estos aditivos penetran el material, sellando poros y microfisuras para mejorar la impermeabilización y prolongar la durabilidad estructural.",
+        website: "https://krystaline.es/",
+    },
+];
+---
+
+<section id="services" class="flex flex-col px-8 lg:px-24 pb-10 pt-20">
+    <Title
+        >{lang === "es" ? "División Industrial" : "Industrial Division"}
+    </Title>
+    <p class="font-medium text-[#808080] mt-10">
+        {
+            lang === "es"
+                ? "También importamos, vendemos y distribuimos algunos productos industriales."
+                : "We Also import, sell and distribute industrial products"
+        }
+    </p>
+    <div class="my-14 grid gap-4 grid-cols-1 md:grid-cols-2 md:grid-rows-2">
+        {
+            industrialProducts.map((product) => (
+                <IndustrialCard
+                    website={product.website}
+                    lang={lang}
+                    name={product.name}
+                    description={product[lang]}
+                    img={product.img}
+                />
+            ))
+        }
+    </div>
+</section>
