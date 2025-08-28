@@ -15,8 +15,16 @@ const { name, description, img, lang, website } = Astro.props;
         <p class="text-#808080 font-lighter mt-1">
             {description}
         </p>
-        <a target="_blank" href={website} class="text-sm text-blue-500 mt-2"
-            >{lang == "es" ? "Más información" : "Learn more"}</a
-        >
+        {
+            website && (
+                <a
+                    target="_blank"
+                    href={website}
+                    class="text-sm text-blue-500 mt-2"
+                >
+                    {lang == "es" ? "Más información" : "Learn more"}
+                </a>
+            )
+        }
     </div>
 </div>
